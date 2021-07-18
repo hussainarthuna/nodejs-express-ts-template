@@ -1,14 +1,17 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app: Application = express();
 
 app.get('/', (req: Request, res: Response) => {
     res.json({
         status: true,
-        message: 'Hello World'
+        message: 'Hello World',
     });
 });
 
-app.listen(5000, () => {
-    console.log(`Server Started on port 5000`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server Started on port ${process.env.PORT}`);
 });
