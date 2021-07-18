@@ -2,8 +2,9 @@ import express, {Application, Request, Response, NextFunction} from 'express';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const port = process.env.PORT;
 
+// App Variables
+const port = process.env.PORT;
 const app: Application = express();
 
 app.get('/', (req: Request, res: Response) => {
@@ -13,6 +14,7 @@ app.get('/', (req: Request, res: Response) => {
     });
 });
 
+// Server And Database Configuration
 app.listen(port, () => {
     console.log(`Server Started on port ${port}`);
 });
